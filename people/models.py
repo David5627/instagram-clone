@@ -14,3 +14,6 @@ class InstaPhotos(models.Model):
     image = CloudinaryField('image', null = True, blank = True)
 
 
+class Comment(models.Model):
+    comment = models.CharField(max_length = 300)
+
