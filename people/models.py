@@ -8,3 +8,9 @@ from tinymce.models import HTMLField
 class Following(models.Model):
     user= models.ForeignKey(User, on_delete = models.CASCADE, null = True, blank = True)
 
+
+class InstaPhotos(models.Model):
+    name = models.CharField(max_length = 20)
+    image = CloudinaryField('image', null = True, blank = True)
+
+
