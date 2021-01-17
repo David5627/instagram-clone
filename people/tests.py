@@ -4,9 +4,9 @@ from django.test import TestCase
 
 class TestImage(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username = "username", email = "e@e.com", password = "password")
+        self.user = User.objects.create_user(username = "username", email = "", password = "password")
         self.profile= Profile(user = self.user)
-        self.img =  Image(name ="test", caption = "haha", likes = 0, profile = self.profile)
+        self.img =  Image(name ="test", caption = "", likes = 0, profile = self.profile)
 
        
     def test_instance(self):
@@ -48,7 +48,7 @@ class TestImage(TestCase):
 class TestProfile(TestCase):
 
     def setUp(self):
-        self.user = User.objects.create_user(username = "username", email = "e@e.com", password = "password")
+        self.user = User.objects.create_user(username = "username", email = "", password = "password")
         self.profile= Profile(bio = "new me", user = self.user)
         # self.img =  Image(name ="test", caption = "haha", likes = 0, profile = self.profile)
        
