@@ -41,3 +41,25 @@ class Profile(models.Model):
         return user
 
 
+class Image(models.Model):
+    image = CloudinaryField('image', null = True)
+    name = models.CharField(max_length = 30)
+    caption = models.TextField() 
+    likes = models.IntegerField(blank = True,null = True)
+    comments = models.ManyToManyField(Comment)
+    profile = models.ForeignKey(Profile, null = True, blank = True, on_delete=models.DO_NOTHING)
+    pub_date = models.DateTimeField(null = True, blank = True, auto_now_add=True)
+
+# image, name, caption, likes, profile
+    def save_image(self):
+        self.save()
+    def delete_image(self):
+        Image.objects.filter(id = self.id).delete()
+    def update_image(self, caption, image):
+        if image is not None:
+            img = Image.objects.get(id = self.id)
+            img.caption = caption
+            img.save()
+            img.image = cloudinary.uploader.upload_resource(image)
+            img.save()
+            return img
