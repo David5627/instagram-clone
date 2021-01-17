@@ -34,7 +34,7 @@ def register(request):
             profile = Profile(user = user)
             profile.save()
             print(user.id)
-            send_welcome_email(user,email)
+            # send_welcome_email(user,email)
             return redirect('login')
         else: 
             messages.info(request, "Username or Password is incorrect")
