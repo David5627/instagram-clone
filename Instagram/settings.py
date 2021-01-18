@@ -156,9 +156,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # cloudinary configurations
 cloudinary.config( 
-  cloud_name = "dehia4hei", 
-  api_key = "238529448467955", 
-  api_secret = "sXlGgNOSlfgk0UVE9NXxctpLxxk" 
+  cloud_name = "dvq58vyno", 
+  api_key = "634897459624327", 
+  api_secret = "uNOnZVTVIYgzDKj6m3C7nn7bx9c" 
 )
 # Configure Django App for Heroku.
 # django_heroku.settings(locals())
